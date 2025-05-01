@@ -1,4 +1,4 @@
-package tororo1066.man10mcp.server.tools
+package tororo1066.mcbot_with_mcp.client.server.tools
 
 import io.modelcontextprotocol.kotlin.sdk.CallToolRequest
 import io.modelcontextprotocol.kotlin.sdk.CallToolResult

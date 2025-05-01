@@ -1,4 +1,4 @@
-package tororo1066.man10mcp.server.resources
+package tororo1066.mcbot_with_mcp.client.server.resources
 
 import io.modelcontextprotocol.kotlin.sdk.ReadResourceRequest
 import io.modelcontextprotocol.kotlin.sdk.ReadResourceResult

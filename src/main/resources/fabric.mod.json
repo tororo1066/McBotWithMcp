@@ -11,10 +11,10 @@
   "environment": "client",
   "entrypoints": {
     "fabric-datagen": [
-      "tororo1066.mcbot_with_mcp.client.Mcbot_with_mcpDataGenerator"
+      "tororo1066.mcbot_with_mcp.client.McBotWithMcpDataGenerator"
     ],
     "client": [
-      "tororo1066.mcbot_with_mcp.client.Mcbot_with_mcpClient"
+      "tororo1066.mcbot_with_mcp.client.McBotWithMcpClient"
     ],
     "main": [
       "tororo1066.mcbot_with_mcp.Mcbot_with_mcp"

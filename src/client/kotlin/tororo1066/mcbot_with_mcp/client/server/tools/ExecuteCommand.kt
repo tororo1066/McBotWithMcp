@@ -1,4 +1,4 @@
-package tororo1066.man10mcp.server.tools
+package tororo1066.mcbot_with_mcp.client.server.tools
 
 import io.modelcontextprotocol.kotlin.sdk.CallToolRequest
 import io.modelcontextprotocol.kotlin.sdk.CallToolResult
@@ -8,13 +8,13 @@ import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonObject
-import org.bukkit.Bukkit
-import tororo1066.tororopluginapi.SJavaPlugin
+import net.minecraft.client.MinecraftClient
+import java.time.LocalDateTime
 
 class ExecuteCommand: AbstractTool() {
     override fun definition(): Tool {
         return Tool(
-            name = "execute_command",
+            name = "mc_client_execute_command",
             description = "Execute a command",
             inputSchema = Tool.Input(
                 properties = buildJsonObject {
@@ -32,12 +32,12 @@ class ExecuteCommand: AbstractTool() {
 
         val command = request.arguments["command"]!!.jsonPrimitive.content
 
-        Bukkit.getScheduler().runTask(SJavaPlugin.plugin, Runnable {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command)
-        })
+        MinecraftClient.getInstance().execute {
+            MinecraftClient.getInstance().player?.networkHandler?.sendCommand(command)
+        }
 
         return CallToolResult(
-            content = listOf(TextContent("Command executed: $command")),
+            content = listOf(TextContent("Executed command at ${LocalDateTime.now()}")),
         )
     }
 
