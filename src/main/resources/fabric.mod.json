@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "mcbot_with_mcp",
+  "version": "${version}",
+  "name": "McBotWithMcp",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/mcbot_with_mcp/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "tororo1066.mcbot_with_mcp.client.Mcbot_with_mcpDataGenerator"
+    ],
+    "client": [
+      "tororo1066.mcbot_with_mcp.client.Mcbot_with_mcpClient"
+    ],
+    "main": [
+      "tororo1066.mcbot_with_mcp.Mcbot_with_mcp"
+    ]
+  },
+  "mixins": [
+    "mcbot_with_mcp.mixins.json",
+    {
+      "config": "mcbot_with_mcp.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
